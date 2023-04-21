@@ -56,25 +56,24 @@ def main():
                     print(move.getChessNotation())
                     if move in validMoves:
                         gs.makeMove(move)
-                        moveMade = True
-                
-                    gs.makeMove(move)
-                    sqSelected = () #reset user clicks
-                    playerClicks = []
+                        moveMade = True       
+                        sqSelected = () #reset user clicks
+                        playerClicks = []
+                    else: 
+                        playerClicks = [sqSelected]
 
-                #key handler:
+            #key handler:
             elif e.type == p.KEYDOWN:
                 if e.key == p.K_z: #undo when 'z' is pressed
                     gs.undoMove() 
                     moveMade = True
 
-            if moveMade:
-                validMoves = gs.getValidMoves()
-                moveMade = False
-            
-            drawGameStat(screen, gs)
-            clock.tick(MAX_FPS)
-            p.display.flip()
+        if moveMade:
+            validMoves = gs.getValidMoves()
+            moveMade = False
+        drawGameStat(screen, gs)
+        clock.tick(MAX_FPS)
+        p.display.flip()
 
 '''
 Responsible for all the graphics within a current game state.
