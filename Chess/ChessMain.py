@@ -21,6 +21,7 @@ def loadImages():
 The main driver for our code, this will handle user input and updating the graphics
 '''
 def main():
+    
     p.init()
     screen = p.display.set_mode((WIDTH, HEIGHT))
     clock = p.time.Clock()
