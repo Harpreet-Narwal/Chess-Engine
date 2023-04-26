@@ -182,10 +182,11 @@ class GameState():
                 # self.whiteToMove = not self.whiteToMove #switch turns back
                 return True
         return False
+    
+    
     # '''
     # All moves without considring checks
     # '''
-
 
     def getAllPossibleMoves(self):
         moves = []
